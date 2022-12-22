@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import apiFetch from "./helpers/apiFetch"
+import apiFetch from "../helpers/apiFetch"
 
 export default function Home() {
     useEffect(() => {
