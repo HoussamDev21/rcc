@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 
 export default function Header() {
-    return <header className="bg-white/90 shadow sticky top-0 backdrop-blur">
+    return <header className="bg-white/90 shadow sticky top-0 backdrop-blur z-50">
         <div className="container mx-auto px-40">
             <div className="h-16 flex">
                 <NavLink to={'/'} className="flex items-center gap-2">

@@ -5,3 +5,22 @@
 body {
     @apply text-slate-700;
 }
+
+/* svg loader */
+@keyframes circle__svg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.circle__svg-circle {
+    transform-origin: center;
+    animation-name: circle__svg;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    height: 1px;
+}

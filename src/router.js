@@ -16,13 +16,14 @@ export default createBrowserRouter([
 	{
 		path: "/",
 		element: <Root />,
+		errorElement: <ErrorBoundary />,
 		children: [
 			{
 				errorElement: <ErrorBoundary />,
 				children: [
 					{
 						path: "/",
-						element: <Home />,
+						element: <Home />
 					},
 					{
 						path: "/pokemons/:name",
@@ -34,9 +35,10 @@ export default createBrowserRouter([
 						element: <Types />,
 						children: [
 							{
-								path: '/types/:name',
+								path: "/types/:name",
 								element: <PokemonsByType />,
-								loader: pokemonsByTypeLoader,
+								errorElement: <ErrorBoundary />,
+								loader: pokemonsByTypeLoader
 							}
 						]
 					},

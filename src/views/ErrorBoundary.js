@@ -6,7 +6,7 @@ export default function ErrorBoundary() {
 
 	if (error.status === 404) {
         title = 'Resource not found!'
-        body = `The resource you're looking for is not found, or the link is incorrect`
+        body = `The resource you're looking for is not found, or the link is wrong`
     } else {
         title = 'Something wrong!'
         body = `Something went wrong, try later`
@@ -20,7 +20,7 @@ export default function ErrorBoundary() {
             <div className="h-4" />
             <div className="font-medium">{title}</div>
             <div className="h-1" />
-            <div className="w-1/3 text-center">{body}</div>
+            <div className="text-center">{body}</div>
             <NavLink to="/" className="underline text-sky-500">Go to home</NavLink>
         </div>
     </div>
