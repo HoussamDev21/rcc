@@ -1,3 +1,66 @@
+# Technical and architectural choices
+
+## Dependencies
+- `react-router-dom` for navigation between pages.
+- `tailwind` for styling.
+- `react-paginate` to render pagination.
+
+## Folders structure
+- `components` contains different components used within pages.
+- `data` contains useful static data, like color for types and icons for pokemons stats.
+- `helpers` contains helpers functions, like (apiFetch; wrapper for fetch function with base url)
+- `loaders` includes all loader functions used with routes. for more infos see https://reactrouter.com/en/main/route/loader
+- `views` includes layouts, pages, error pages.
+
+**router.js** file includes all routes with their specific views
+
+# Possible improvements
+- move hardcoded svg icons to an `assets` folder, and create component that render them automatically by passing name and size as prop.
+- responsive enhancements: 
+  - slide menu.
+  - horizontal scroll for types.
+- display more infos in single Pokemon show page.
+- maintain scroll position when navigating back.
+- use placholder content loader instead of global loader, in other pages.
+- filter by types and search in home page (unfortunately the current API doesn't support filters with pagination).
+- move hardcoded values like (baseUrl) to .env file.
+- tests.
+- darkmode.
+- offline mode.
+
+# What is already done
+- [x] list all pokemons with pagination
+- [ ] filter pokemons in home page 
+- [x] save pagination state in url query
+- [x] single pokemon show page
+  - [x] display stat
+  - [x] display types. (click on type tag will redirect to types and display other pokemons with having same type).
+  - [x] display evolution chain with each pokemon clickable.
+- [x] types page
+  - [x] list all types.
+  - [x] filter pokemons by types (endpoint here doesn't support pagination).    
+- [x] display loaders when fetching data.
+- [x] display error view when resource not found.
+- [x] display an empty block when no data available (in home page).
+
+# Demo
+- video link: https://www.loom.com/share/c5a7edbb9a6f4fcb989b6e33d513f229
+- demo link: https://houssam-rcc.netlify.app
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+---
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
