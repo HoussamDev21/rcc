@@ -1,12 +1,12 @@
 import { useEffect } from "react"
 import apiFetch from "./helpers/apiFetch"
 
-export default function App() {
-	useEffect(() => {
+export default function Home() {
+    useEffect(() => {
 		apiFetch('/pokemon')
 			.then(response => response.json())
 			.then(data => console.log(data))
 	}, [])
 
-	return <div>App</div>
+    return <div>Home</div>
 }

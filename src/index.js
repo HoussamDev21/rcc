@@ -7,15 +7,29 @@ import {
 	createBrowserRouter,
 	RouterProvider,
 } from "react-router-dom"
+import Root from './views/Root'
+import Home from './views/Home'
+import ViewPokemon from './views/ViewPokemon'
+import Types from './views/Types'
 
 const router = createBrowserRouter([
 	{
-	  path: "/",
-	  element: <App />,
-	},
-	{
-	  path: "/test",
-	  element: <div>test router</div>,
+		path: "/",
+		element: <Root />,
+		children: [
+			{
+				path: "/",
+				element: <Home />,
+			},
+			{
+				path: "/pokemons/:name",
+				element: <ViewPokemon />,
+			},
+			{
+				path: "/types",
+				element: <Types />,
+			},
+		]
 	},
 ])
 
