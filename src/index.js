@@ -10,6 +10,7 @@ import Root from './views/Root'
 import Home from './views/Home'
 import ViewPokemon from './views/ViewPokemon'
 import Types from './views/Types'
+import PokemonsByType from './views/PokemonsByType'
 
 const router = createBrowserRouter([
 	{
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
 			{
 				path: "/types",
 				element: <Types />,
+				children: [
+					{
+						path: '/types/:name',
+						element: <PokemonsByType />
+					}
+				]
 			},
 		]
 	},

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
 import PokemonEvolutionChain from "../components/Pokemon/EvolutionChain"
 import statIcons from "../data/statIcons"
 import typeBgColors from "../data/typeBgColors"
@@ -31,7 +31,7 @@ export default function ViewPokemon() {
                 <div className="flex items-center gap-2">
                     <h1 className="capitalize text-2xl font-medium">{pokemon.name}</h1>
                     {pokemon.types.map((type) => (
-                        <div key={type.type.name} className={`px-3 h-6 flex items-center rounded-full leading-none text-sm text-white ${typeBgColors[type.type.name]}`}>{type.type.name}</div>
+                        <NavLink to={`/types/${type.type.name}`} key={type.type.name} className={`hover:bg-opacity-80 px-3 h-6 flex items-center rounded-full leading-none text-sm text-white ${typeBgColors[type.type.name]}`}>{type.type.name}</NavLink>
                     ))}
                 </div>
                 <div className="h-4" />

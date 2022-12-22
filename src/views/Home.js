@@ -13,11 +13,11 @@ export default function Home() {
 
     const initialPage = useMemo(() => {
         return Number(searchParams.get('page')) || 1
-    }, [])
+    }, [searchParams])
 
     useEffect(() => {
         fetchData()
-    }, [page])
+    }, [page, searchParams])
 
     const fetchData = async () => {
         const page = Number(searchParams.get('page')) || 1
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="h-8" />
         <div className="flex justify-center">
             {!!total && <ReactPaginate
-                initialPage={initialPage - 1}
+                forcePage={initialPage - 1}
                 breakLabel="..."
                 nextLabel="next"
                 previousLabel="previous"
