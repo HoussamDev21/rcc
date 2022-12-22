@@ -2,42 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import {
-	createBrowserRouter,
-	RouterProvider,
-} from "react-router-dom"
-import Root from './views/Root'
-import Home from './views/Home'
-import ViewPokemon from './views/ViewPokemon'
-import Types from './views/Types'
-import PokemonsByType from './views/PokemonsByType'
+import { RouterProvider } from "react-router-dom"
+import router from './router'
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Root />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/pokemons/:name",
-				element: <ViewPokemon />,
-			},
-			{
-				path: "/types",
-				element: <Types />,
-				children: [
-					{
-						path: '/types/:name',
-						element: <PokemonsByType />
-					}
-				]
-			},
-		]
-	},
-])
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

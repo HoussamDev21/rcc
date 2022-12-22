@@ -1,26 +1,10 @@
-import { useEffect, useState } from "react"
-import { NavLink, useParams } from "react-router-dom"
+import { NavLink, useLoaderData } from "react-router-dom"
 import PokemonEvolutionChain from "../components/Pokemon/EvolutionChain"
 import statIcons from "../data/statIcons"
 import typeBgColors from "../data/typeBgColors"
-import apiFetch from "../helpers/apiFetch"
 
 export default function ViewPokemon() {
-    const { name } = useParams()
-    const [pokemon, setPokemon] = useState(null)
-
-    useEffect(() => {
-        fetchData()
-    }, [name])
-
-    const fetchData = async () => {
-        const response = await apiFetch(`/pokemon/${name}`)
-        const data = await response.json()
-        setPokemon(data)
-
-    }
-
-    if (!pokemon) return null
+    const pokemon = useLoaderData()
 
     return <div className="container mx-auto px-40 py-8">
         <div className="flex gap-8">
