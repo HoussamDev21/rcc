@@ -6,8 +6,8 @@ import typeBgColors from "../data/typeBgColors"
 export default function ViewPokemon() {
     const pokemon = useLoaderData()
 
-    return <div className="container mx-auto px-40 py-8">
-        <div className="flex gap-8">
+    return <div className="container mx-auto lg:px-40 px-6 py-8">
+        <div className="flex flex-wrap gap-8 justify-center">
             <div className="rounded-lg bg-slate-100 w-52 p-4">
                 <img src={pokemon.sprites.front_default} className="w-full" />
             </div>

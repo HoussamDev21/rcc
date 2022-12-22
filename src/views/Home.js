@@ -39,7 +39,7 @@ export default function Home() {
         setPage(selected + 1)
     }
 
-    return <div className="container mx-auto px-40 py-8">
+    return <div className="container mx-auto lg:px-40 px-3 py-8">
         <div className="flex flex-wrap justify-center gap-4">
             {
                 pending
