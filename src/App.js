@@ -8,5 +8,5 @@ export default function App() {
 			.then(data => console.log(data))
 	}, [])
 
-	return null
+	return <div>App</div>
 }
